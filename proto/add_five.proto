@@ -1,0 +1,14 @@
+syntax = "proto3";
+package add_five;
+
+message add_five_request {
+	int32 num = 1;
+}
+
+message add_five_response {
+	int32 result = 1;
+}
+
+service add_five {
+	rpc add_five (stream add_five_request) returns (stream add_five_response) {}
+}
